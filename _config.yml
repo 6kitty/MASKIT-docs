@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: MASKIT
+description: MASKIT : DLP 및 데이터 마스킹 솔루션
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://6kitty.github.io/MASKIT-docs
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Template Repository: https://github.com/6kitty/MASKIT-docs
