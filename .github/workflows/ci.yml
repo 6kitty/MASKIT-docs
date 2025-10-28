@@ -6,17 +6,38 @@ on:
   pull_request:
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Build with Jekyll
-        run: bundle exec jekyll build
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Show Ruby / Bundler info (diagnostics)
+        run: |
+          ruby -v
+          gem -v
+          bundle -v
+          echo "---- Bundler env ----"
+          bundle env || true
+
+      - name: Install gems explicitly
+        run: |
+          bundle install --jobs 4 --retry 3
+
+      - name: Print Gemfile and Gemfile.lock (for debugging)
+        run: |
+          echo "---- Gemfile ----"
+          sed -n '1,200p' Gemfile || true
+          echo "---- Gemfile.lock ----"
+          sed -n '1,200p' Gemfile.lock || true
+
+      - name: Build with Jekyll (verbose)
+        run: |
+          bundle exec jekyll build --trace --verbose
