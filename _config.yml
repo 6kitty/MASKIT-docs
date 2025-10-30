@@ -6,3 +6,7 @@ url: https://6kitty.github.io/MASKIT-docs
 
 aux_links:
   Template Repository: https://github.com/6kitty/MASKIT-docs
+
+plugins:
+  - jekyll-feed
+  - just-the-docs
