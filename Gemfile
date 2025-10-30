@@ -2,7 +2,8 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
-gem "just-the-docs", "~> 0.10.1"
+gem "github-pages", group: :jekyll_plugins
+gem "just-the-docs"
 gem "jekyll-sass-converter", "~> 3.0"
 gem "rouge", "~> 4.5"
 gem "rake", "~> 13.2"
