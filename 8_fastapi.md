@@ -36,6 +36,7 @@ app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 ```
 
 ### 포함된 라우터
+
 | 라우터 | 경로 | 용도 |
 |--------|------|------|
 | uploads | `/api/v1/files` | 파일 업로드 |

@@ -623,6 +623,7 @@ async def mask_pii_in_pdf(pii_items: List[PIIItemFromAnalysis]):
 - **특징**: 벡터 기반 마스킹, 고품질 유지
 
 ### 이미지
+
 | 형식 | 확장자 | 라이브러리 | 저장 형식 |
 |------|--------|-----------|---------|
 | PNG | .png | PIL | PNG |
